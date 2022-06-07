@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="match_parent"
+                                                   android:background="#3B5999"
+
+>
+    <ImageView
+            android:layout_width="65dp"
+            android:layout_height="65dp" app:srcCompat="@drawable/facebook_logo" android:id="@+id/imageView2"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="112dp"
+    />
+    <TextView
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:text="•"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/textView"
+            app:layout_constraintTop_toBottomOf="@+id/imageView2"
+            android:layout_marginTop="24dp" app:layout_constraintEnd_toEndOf="@+id/imageView2"
+            app:layout_constraintStart_toStartOf="@+id/imageView2"/>
+    <TextView
+            android:textSize="14sp"
+            android:textAlignment="center"
+            android:textColor="#E8E8E8"
+            android:text="English"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/textView2"
+            app:layout_constraintEnd_toStartOf="@+id/textView" android:layout_marginEnd="12sp"
+            app:layout_constraintTop_toTopOf="@+id/textView" app:layout_constraintBottom_toBottomOf="@+id/textView"
+            app:layout_constraintVertical_bias="0.571"/>
+    <TextView
+            android:textSize="14sp"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:text="Change"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/textView3"
+            app:layout_constraintStart_toEndOf="@+id/textView" android:layout_marginStart="12sp"
+            app:layout_constraintTop_toTopOf="@+id/textView" app:layout_constraintBottom_toBottomOf="@+id/textView"
+            app:layout_constraintVertical_bias="0.571"/>
+    <EditText
+            android:paddingHorizontal="10dp"
+            android:textColorHint="#D3E8E8E8"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/white"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:hint="Email or Phone"
+            android:ems="10"
+            android:id="@+id/editTextTextPersonName"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            android:layout_marginTop="40dp" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.496"
+            android:minHeight="48dp"/>
+    <EditText
+            android:paddingHorizontal="10dp"
+            android:textColorHint="#D3E8E8E8"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/white"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:hint="Password"
+            android:ems="10"
+            android:id="@+id/editTextTextPassword"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
+            android:layout_marginTop="32dp" app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName"
+            app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName" app:layout_constraintHorizontal_bias="0.0"
+            android:minHeight="48dp"/>
+    <Button
+            android:paddingVertical="12sp"
+            android:stateListAnimator="@null"
+            android:width="280dp"
+            android:text="Log In"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/button"
+            android:backgroundTint="#14FFFFFF"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" android:layout_marginTop="32dp"
+            app:layout_constraintStart_toStartOf="@+id/editTextTextPassword"
+            app:layout_constraintEnd_toEndOf="@+id/editTextTextPassword" app:layout_constraintHorizontal_bias="0.0"
+            android:filterTouchesWhenObscured="false"/>
+    <TextView
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:text="Sign Up for Facebook"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/textView4"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.853"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"/>
+    <TextView
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:text="Forgot Password?"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/textView5"
+            app:layout_constraintTop_toBottomOf="@+id/textView4"
+            android:layout_marginTop="24dp" app:layout_constraintEnd_toEndOf="@+id/textView4"
+            app:layout_constraintStart_toStartOf="@+id/textView4" app:layout_constraintHorizontal_bias="0.476"/>
+    <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp" app:srcCompat="@drawable/ic_help_circle" android:id="@+id/imageView3"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginEnd="24dp" android:layout_marginBottom="48dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/FPTU/TERM 7/Mobile/GroupProject/app/src/main/res/drawable/ic_giraffe.xml" value="0.36302083333333335" />
+        <entry key="..\:/FPTU/TERM 7/Mobile/GroupProject/app/src/main/res/drawable/ic_lion.xml" value="0.26979166666666665" />
+        <entry key="..\:/FPTU/TERM 7/Mobile/GroupProject/app/src/main/res/drawable/ic_squirrel.xml" value="0.26979166666666665" />
+        <entry key="..\:/FPTU/TERM 7/Mobile/GroupProject/app/src/main/res/layout/activity_deposit.xml" value="0.67" />
+        <entry key="..\:/FPTU/TERM 7/Mobile/GroupProject/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/FPTU/TERM 7/Mobile/GroupProject/app/src/main/res/layout/test.xml" value="0.18" />
+      </map>
+    </option>
+  </component>
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

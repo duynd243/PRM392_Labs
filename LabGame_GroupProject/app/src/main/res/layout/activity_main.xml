@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/constraintLayout">
+
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="64dp" app:srcCompat="@drawable/ic_trophy" android:id="@+id/imageView4"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="32dp" app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.498"/>
+            <TextView
+                    android:text="Wins"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:id="@+id/textView5"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView4"
+                    android:layout_marginTop="16dp" app:layout_constraintEnd_toEndOf="@+id/imageView4"
+                    app:layout_constraintStart_toStartOf="@+id/imageView4"/>
+            <TextView
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:minWidth="80dp"
+                    android:background="#4CDA32"
+                    android:textColor="@color/white"
+                    android:padding="5dp"
+                    android:text="${WIN}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:id="@+id/tvWins"
+                    app:layout_constraintEnd_toEndOf="@+id/textView5"
+                    app:layout_constraintStart_toStartOf="@+id/textView5"
+                    app:layout_constraintTop_toBottomOf="@+id/textView5"
+                    android:layout_marginTop="20dp"/>
+            <ImageView
+                    android:layout_width="59dp"
+                    android:layout_height="64dp" app:srcCompat="@drawable/ic_money_bag"
+                    android:id="@+id/imageView2"
+                    app:layout_constraintTop_toTopOf="@+id/imageView4"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView4"
+                    app:layout_constraintEnd_toStartOf="@+id/imageView4" android:layout_marginEnd="64dp"
+                    app:layout_constraintVertical_bias="0.0"/>
+            <TextView
+                    android:text="Balance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:id="@+id/textView2"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView2"
+                    android:layout_marginTop="16dp" app:layout_constraintStart_toStartOf="@+id/imageView2"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView2" app:layout_constraintHorizontal_bias="0.555"/>
+            <TextView
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:minWidth="80dp"
+                    android:background="#E8D41C"
+                    android:textColor="@color/white"
+                    android:padding="5dp"
+                    android:text="${AMOUNT}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:id="@+id/tvAmount"
+                    app:layout_constraintEnd_toStartOf="@+id/tvWins"
+                    android:layout_marginEnd="68dp" app:layout_constraintTop_toBottomOf="@+id/textView2"
+                    android:layout_marginTop="20dp" app:layout_constraintBottom_toBottomOf="@+id/tvWins"/>
+            <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="64dp" app:srcCompat="@drawable/ic_sad_face"
+                    android:id="@+id/imageView3"
+                    app:layout_constraintStart_toEndOf="@+id/imageView4" android:layout_marginStart="64dp"
+                    app:layout_constraintTop_toTopOf="@+id/imageView4"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView4" app:layout_constraintVertical_bias="1.0"/>
+            <TextView
+                    android:text="Loses"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:id="@+id/textView3"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView3"
+                    app:layout_constraintStart_toStartOf="@+id/imageView3"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView3" android:layout_marginTop="16dp"
+            />
+            <TextView
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:minWidth="80dp"
+                    android:background="#DD483A"
+                    android:textColor="@color/white"
+                    android:padding="5dp"
+                    android:text="${LOSES}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:id="@+id/tvLosses"
+                    app:layout_constraintStart_toEndOf="@+id/tvWins"
+                    android:layout_marginStart="68dp" app:layout_constraintTop_toBottomOf="@+id/textView3"
+                    android:layout_marginTop="20dp" app:layout_constraintBottom_toBottomOf="@+id/tvWins"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+        >
+            <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent"
+                                                               android:layout_height="wrap_content"
+                                                               android:id="@+id/linearLayout">
+
+
+                <SeekBar
+                        android:thumb="@drawable/ic_giraffe"
+                        android:layout_marginStart="25dp"
+                        android:layout_width="274dp"
+                        android:layout_height="wrap_content" android:id="@+id/seekBarPet1"
+                        app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="32dp"
+                        app:layout_constraintHorizontal_bias="0.407"/>
+                <SeekBar
+                        android:thumb="@drawable/ic_lion"
+                        android:layout_width="274dp"
+                        android:layout_height="wrap_content" android:id="@+id/seekBarPet2"
+                        app:layout_constraintTop_toBottomOf="@+id/seekBarPet1"
+                        android:layout_marginTop="20dp" app:layout_constraintEnd_toEndOf="@+id/seekBarPet1"
+                        app:layout_constraintStart_toStartOf="@+id/seekBarPet1"
+                        app:layout_constraintHorizontal_bias="0.0"/>
+                <SeekBar
+                        android:thumb="@drawable/ic_squirrel"
+                        android:layout_width="274dp"
+                        android:layout_height="wrap_content" android:id="@+id/seekBarPet3"
+                        app:layout_constraintTop_toBottomOf="@+id/seekBarPet2"
+                        android:layout_marginTop="20dp" app:layout_constraintEnd_toEndOf="@+id/seekBarPet2"
+                        app:layout_constraintStart_toStartOf="@+id/seekBarPet2"
+                        app:layout_constraintHorizontal_bias="0.0"/>
+                <EditText
+                        android:hint="Amount to bet"
+                        android:layout_width="280dp"
+                        android:layout_height="48dp"
+                        android:inputType="number"
+                        android:ems="10"
+                        android:id="@+id/etBetAmount"
+                        android:minHeight="48dp" app:layout_constraintTop_toBottomOf="@+id/radioGroup"
+                        android:layout_marginTop="45dp" app:layout_constraintEnd_toEndOf="@+id/radioGroup"
+                        app:layout_constraintStart_toStartOf="@+id/radioGroup"
+                />
+                <Button
+                        android:text="Start"
+                        android:layout_width="280dp"
+                        android:layout_height="50dp" android:id="@+id/btnStart"
+                        app:layout_constraintTop_toBottomOf="@+id/etBetAmount"
+                        android:layout_marginTop="35dp" app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.498"/>
+                <RadioGroup
+                        android:padding="20dp"
+                        android:background="#E0FADF"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="400dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@+id/seekBarPet3"
+                        android:layout_marginTop="60dp" app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" android:id="@+id/radioGroup">
+                    <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:id="@+id/radioButtonPet1"/>
+                    <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent" app:srcCompat="@drawable/ic_giraffe"
+                            android:id="@+id/imageView8" android:layout_weight="0.8"/>
+                    <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:id="@+id/radioButtonPet2"/>
+
+                    <ImageView
+                            android:layout_marginEnd="20dp"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent" app:srcCompat="@drawable/ic_lion"
+                            android:id="@+id/imageView9" android:layout_weight="0.8"/>
+                    <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:id="@+id/radioButtonPet3"/>
+                    <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent" app:srcCompat="@drawable/ic_squirrel"
+                            android:id="@+id/imageView10" android:layout_weight="0.8"/>
+                </RadioGroup>
+                <TextView
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:paddingVertical="4dp"
+                        android:paddingHorizontal="10dp"
+                        android:background="#18B10D"
+                        android:text="Choose your pet"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:id="@+id/textView6"
+                        app:layout_constraintBottom_toTopOf="@+id/radioGroup"
+                        app:layout_constraintStart_toStartOf="@+id/radioGroup"/>
+                <ImageView
+                        android:layout_width="38dp"
+                        android:layout_height="38dp" app:srcCompat="@drawable/ic_trophy"
+                        android:id="@+id/pet1Badge"
+                        app:layout_constraintTop_toTopOf="@+id/seekBarPet1"
+                        app:layout_constraintBottom_toBottomOf="@+id/seekBarPet1"
+                        app:layout_constraintStart_toEndOf="@+id/seekBarPet1" android:layout_marginStart="12dp"
+                />
+                <ImageView
+
+                        android:layout_width="38dp"
+                        android:layout_height="38dp" app:srcCompat="@drawable/ic_trophy"
+                        android:id="@+id/pet2Badge"
+                        app:layout_constraintTop_toTopOf="@+id/seekBarPet2"
+                        app:layout_constraintBottom_toBottomOf="@+id/seekBarPet2"
+                        app:layout_constraintStart_toEndOf="@+id/seekBarPet2" android:layout_marginStart="12dp"/>
+                <ImageView
+                        android:layout_width="38dp"
+                        android:layout_height="38dp" app:srcCompat="@drawable/ic_trophy"
+                        android:id="@+id/pet3Badge"
+                        app:layout_constraintTop_toTopOf="@+id/seekBarPet3"
+                        app:layout_constraintBottom_toBottomOf="@+id/seekBarPet3"
+                        app:layout_constraintStart_toEndOf="@+id/seekBarPet3" android:layout_marginStart="12dp"/>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
