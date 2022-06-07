@@ -1,5 +1,6 @@
 package com.prm392.lab4;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
@@ -17,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
 
         Button btnOrderFood = findViewById(R.id.btnOrderFood);
         Button btnOrderDrink = findViewById(R.id.btnOrderDrink);
+        Button btnQuit = findViewById(R.id.btnQuit);
         TextView tvOrderedFood = findViewById(R.id.tvOrderedFood);
         TextView tvOrderedDrink = findViewById(R.id.tvOrderedDrink);
 
@@ -48,6 +50,18 @@ public class MainActivity extends AppCompatActivity {
         btnOrderDrink.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, DrinkActivity.class);
             startActivity(intent);
+        });
+
+        btnQuit.setOnClickListener(v -> {
+            new AlertDialog.Builder(MainActivity.this)
+                    .setTitle("Thoát")
+                    .setMessage("Bạn có chắc chắn muốn thoát ứng dụng?")
+                    .setPositiveButton("Thoát", (d, w) -> {
+                        finish();
+                        System.exit(0);
+                    })
+                    .setNegativeButton("Huỷ", null)
+                    .show();
         });
     }
 }
