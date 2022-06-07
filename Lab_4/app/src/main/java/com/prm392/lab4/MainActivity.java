@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
                     .setTitle("Thoát")
                     .setMessage("Bạn có chắc chắn muốn thoát ứng dụng?")
                     .setPositiveButton("Thoát", (d, w) -> {
-                        finish();
+                        finishAffinity();
                         System.exit(0);
                     })
                     .setNegativeButton("Huỷ", null)
