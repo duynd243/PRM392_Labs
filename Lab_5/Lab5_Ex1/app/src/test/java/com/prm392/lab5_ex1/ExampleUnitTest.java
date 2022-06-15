@@ -1,4 +1,4 @@
-package com.prm392.passingdata;
+package com.prm392.lab5_ex1;
 
 import org.junit.Test;
 

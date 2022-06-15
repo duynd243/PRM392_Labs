@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        android:paddingBottom="16dp"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp" tools:srcCompat="@tools:sample/avatars" android:id="@+id/imagePhone"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="16dp" android:layout_marginStart="16dp"/>
+    <TextView
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:text="Phone Name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/tvPhoneName"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="16dp" app:layout_constraintStart_toEndOf="@+id/imagePhone"
+            android:layout_marginStart="20dp"/>
+    <TextView
+            android:textColor="#2C2C2C"
+            android:textSize="16sp"
+            android:text="Brand: "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/tvBrandLabel"
+            app:layout_constraintTop_toBottomOf="@+id/tvPhoneName"
+            android:layout_marginTop="15dp" app:layout_constraintStart_toStartOf="@+id/tvPhoneName"/>
+    <TextView
+            android:textColor="#2C2C2C"
+            android:textSize="16sp"
+            android:text="Brand Value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/tvBrandValue"
+            app:layout_constraintTop_toTopOf="@+id/tvBrandLabel"
+            app:layout_constraintBottom_toBottomOf="@+id/tvBrandLabel" app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/tvBrandLabel"/>
+    <TextView
+            android:padding="5dp"
+            android:background="@color/teal_700"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:text="Price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/tvPrice"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="16dp" app:layout_constraintBottom_toBottomOf="parent"/>
+    <TextView
+            android:textColor="#2C2C2C"
+            android:textSize="16sp"
+            android:text="Release Year: "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/tvYearLabel"
+            app:layout_constraintStart_toStartOf="@+id/tvBrandLabel"
+            app:layout_constraintTop_toBottomOf="@+id/tvBrandLabel" android:layout_marginTop="8dp"/>
+    <TextView
+            android:textColor="#2C2C2C"
+            android:textSize="16sp"
+            android:text="Year"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/tvYearValue"
+            app:layout_constraintStart_toEndOf="@+id/tvYearLabel" app:layout_constraintTop_toTopOf="@+id/tvYearLabel"
+            app:layout_constraintBottom_toBottomOf="@+id/tvYearLabel"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

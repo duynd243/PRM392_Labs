@@ -1,9 +1,9 @@
 package com.prm392.passingdata;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
-import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
             Student student = new Student("Nguyen Dinh Duy", "SE150396");
             Bundle bundle = new Bundle();
             bundle.putString("string", "Truyen data voi Bundle");
-            bundle.putInt("number", 255);
+            bundle.putInt("number", 511);
             bundle.putStringArray("array", cityArr);
             bundle.putSerializable("student", student);
 
