@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="40dp"
+        tools:context=".activity.CreateTrainee">
+    <EditText
+            android:hint="Email address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:ems="10"
+            android:id="@+id/etTraineeEmail"
+            app:layout_constraintTop_toBottomOf="@+id/etTraineeName"
+            android:layout_marginTop="24dp" app:layout_constraintEnd_toEndOf="@+id/etTraineeName"
+            app:layout_constraintStart_toStartOf="@+id/etTraineeName"
+    />
+    <EditText
+            android:hint="Phone number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="phone"
+            android:ems="10"
+            android:id="@+id/etTraineePhone"
+            app:layout_constraintTop_toBottomOf="@+id/etTraineeEmail"
+            android:layout_marginTop="28dp" app:layout_constraintEnd_toEndOf="@+id/etTraineeEmail"
+            app:layout_constraintStart_toStartOf="@+id/etTraineeEmail"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:hint="Enter trainee name"
+            android:ems="10"
+            android:id="@+id/etTraineeName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvHeading" android:layout_marginTop="32dp"/>
+    <RadioGroup
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/etTraineePhone"
+            android:layout_marginTop="32dp" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" android:id="@+id/rgTraineeGender">
+        <RadioButton
+                android:text="Male"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/rbMale"/>
+        <RadioButton
+                android:text="Female"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/rbFemale"/>
+    </RadioGroup>
+    <Button
+            android:text="Create/Update Trainee"
+            android:layout_width="wrap_content"
+            android:layout_height="58dp" android:id="@+id/positiveButton"
+            app:layout_constraintTop_toBottomOf="@+id/rgTraineeGender"
+            android:layout_marginTop="32dp" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+    <TextView
+            android:textColor="#3C3A3A"
+            android:textSize="16sp"
+            android:text="CANCEL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/negativeButton"
+            app:layout_constraintTop_toBottomOf="@+id/positiveButton"
+            android:layout_marginTop="20dp" app:layout_constraintEnd_toEndOf="@+id/positiveButton"
+            app:layout_constraintStart_toStartOf="@+id/positiveButton"/>
+    <TextView
+            android:textColor="@color/purple_500"
+            android:textSize="24dp"
+            android:text="Heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/tvHeading"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="0dp" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
