@@ -7,7 +7,6 @@ import java.util.List;
 
 public interface TraineeService {
     String TRAINEE = "Trainee";
-
     @GET(TRAINEE)
     Call<List<Trainee>> getAllTrainees();
 

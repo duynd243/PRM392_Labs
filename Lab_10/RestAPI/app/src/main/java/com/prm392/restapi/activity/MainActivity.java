@@ -19,8 +19,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    ImageView icAdd;
+    public enum DialogType {
+        CREATE,
+        UPDATE
+    }
+
     ListView listView;
+    ImageView icAdd;
     TraineeListViewAdapter traineeAdapter;
     TraineeService traineeService;
     List<Trainee> traineeList = new ArrayList<>();
@@ -30,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         icAdd = findViewById(R.id.icAdd);
-        icAdd.setOnClickListener(v -> showAddDialog());
+        icAdd.setOnClickListener(v -> showDialog(DialogType.CREATE, null));
         traineeService = TraineeRepository.getTraineeService();
         listView = findViewById(R.id.listView);
         traineeAdapter = new TraineeListViewAdapter(MainActivity.this, traineeList, R.layout.row_trainee);
@@ -38,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         loadTrainees();
     }
 
-    public void showUpdateDialog(Trainee currentTrainee) {
+    public void showDialog(DialogType dialogType, Trainee currentTrainee) {
         Dialog dialog = new Dialog(MainActivity.this);
         dialog.setContentView(R.layout.create_update_trainee);
 
@@ -50,21 +55,26 @@ public class MainActivity extends AppCompatActivity {
         EditText etTraineeEmail = dialog.findViewById(R.id.etTraineeEmail);
         EditText etTraineePhone = dialog.findViewById(R.id.etTraineePhone);
         RadioGroup rgTraineeGender = dialog.findViewById(R.id.rgTraineeGender);
-
         RadioButton rbMale = dialog.findViewById(R.id.rbMale);
         RadioButton rbFemale = dialog.findViewById(R.id.rbFemale);
 
-        tvHeading.setText("Update Trainee");
-        positiveButton.setText("Update");
-        etTraineeName.setText(currentTrainee.getName());
-        etTraineeEmail.setText(currentTrainee.getEmail());
-        etTraineePhone.setText(currentTrainee.getPhone());
-        if (currentTrainee.getGender().equals("Male")) {
-            rbMale.setChecked(true);
-        } else if (currentTrainee.getGender().equals("Female")) {
-            rbFemale.setChecked(true);
+        if (dialogType == DialogType.CREATE) {
+            tvHeading.setText("Create Trainee");
+            positiveButton.setText("Create");
+        } else if (dialogType == DialogType.UPDATE) {
+            tvHeading.setText("Update Trainee");
+            positiveButton.setText("Update");
+            etTraineeName.setText(currentTrainee.getName());
+            etTraineeEmail.setText(currentTrainee.getEmail());
+            etTraineePhone.setText(currentTrainee.getPhone());
+            if (currentTrainee.getGender().equals("Male")) {
+                rbMale.setChecked(true);
+            } else if (currentTrainee.getGender().equals("Female")) {
+                rbFemale.setChecked(true);
+            }
         }
 
+        negativeButton.setOnClickListener(v -> dialog.dismiss());
 
         positiveButton.setOnClickListener(v -> {
             String name = etTraineeName.getText().toString().trim();
@@ -99,65 +109,12 @@ public class MainActivity extends AppCompatActivity {
 
             RadioButton rbGender = dialog.findViewById(checkedRadioButtonGenderId);
             gender = rbGender.getText().toString();
-            Trainee updateTrainee = new Trainee(name, email, phone, gender);
-            updateTrainee(currentTrainee, updateTrainee);
-            dialog.dismiss();
-        });
-        negativeButton.setOnClickListener(v -> dialog.dismiss());
-
-        dialog.show();
-    }
-
-    private void showAddDialog() {
-        Dialog dialog = new Dialog(MainActivity.this);
-        dialog.setContentView(R.layout.create_update_trainee);
-
-        TextView tvHeading = dialog.findViewById(R.id.tvHeading);
-        TextView negativeButton = dialog.findViewById(R.id.negativeButton);
-        TextView positiveButton = dialog.findViewById(R.id.positiveButton);
-
-        EditText etTraineeName = dialog.findViewById(R.id.etTraineeName);
-        EditText etTraineeEmail = dialog.findViewById(R.id.etTraineeEmail);
-        EditText etTraineePhone = dialog.findViewById(R.id.etTraineePhone);
-        RadioGroup rgTraineeGender = dialog.findViewById(R.id.rgTraineeGender);
-        negativeButton.setOnClickListener(v -> dialog.dismiss());
-        tvHeading.setText("Create Trainee");
-        positiveButton.setText("Create");
-        positiveButton.setOnClickListener(v -> {
-            String name = etTraineeName.getText().toString().trim();
-            String email = etTraineeEmail.getText().toString().trim();
-            String phone = etTraineePhone.getText().toString().trim();
-            int checkedRadioButtonGenderId = rgTraineeGender.getCheckedRadioButtonId();
-            String gender;
-            if (name.isEmpty()) {
-                etTraineeName.setError("Name is required");
-                etTraineeName.requestFocus();
-                return;
+            Trainee newTrainee = new Trainee(name, email, phone, gender);
+            if (dialogType == DialogType.CREATE) {
+                createTrainee(newTrainee);
+            } else {
+                updateTrainee(currentTrainee, newTrainee);
             }
-            if (email.isEmpty()) {
-                etTraineeEmail.setError("Email is required");
-                etTraineeEmail.requestFocus();
-                return;
-            }
-            if (!ValidationUtils.isValidEmail(email)) {
-                etTraineeEmail.setError("Invalid email");
-                etTraineeEmail.requestFocus();
-                return;
-            }
-            if (phone.isEmpty()) {
-                etTraineePhone.setError("Phone is required");
-                etTraineePhone.requestFocus();
-                return;
-            }
-            if (checkedRadioButtonGenderId == -1) {
-                Toast.makeText(this, "Gender is required", Toast.LENGTH_SHORT).show();
-                return;
-            }
-
-            RadioButton rbGender = dialog.findViewById(checkedRadioButtonGenderId);
-            gender = rbGender.getText().toString();
-            Trainee trainee = new Trainee(name, email, phone, gender);
-            createTrainee(trainee);
             dialog.dismiss();
         });
         dialog.show();

@@ -78,7 +78,7 @@ public class TraineeListViewAdapter extends BaseAdapter {
         holder.tvGender.setText(trainee.getGender());
 
         holder.icTrash.setOnClickListener(v -> context.deleteTrainee(trainee));
-        holder.icEdit.setOnClickListener(v -> context.showUpdateDialog(trainee));
+        holder.icEdit.setOnClickListener(v -> context.showDialog(MainActivity.DialogType.UPDATE, trainee));
         return view;
     }
 }
